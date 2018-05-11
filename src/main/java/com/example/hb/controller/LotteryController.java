@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/lottery")
-@EnableAutoConfiguration
 public class LotteryController {
 
     @Autowired
