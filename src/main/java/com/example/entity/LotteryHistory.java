@@ -3,11 +3,11 @@ package com.example.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="LOTTERY_HISTORY")
+@Table(name = "LOTTERY_HISTORY")
 public class LotteryHistory {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Integer blue1;
     private Integer blue2;
@@ -16,6 +16,14 @@ public class LotteryHistory {
     private Integer blue5;
     private Integer blue6;
     private Integer red;
+    private Double sales;
+    private Long firstPrizeCount;
+    private Double firstPrizeAmount;
+    private Long secondPrizeCount;
+    private Double secondPrizeAmount;
+    private Long thirdPrizeCount;
+    private Double thirdPrizeAmount;
+    private Double expectedValue;
 
     public Long getId() {
         return id;
@@ -79,5 +87,69 @@ public class LotteryHistory {
 
     public void setRed(Integer red) {
         this.red = red;
+    }
+
+    public Double getSales() {
+        return sales;
+    }
+
+    public void setSales(Double sales) {
+        this.sales = sales;
+    }
+
+    public Long getFirstPrizeCount() {
+        return firstPrizeCount;
+    }
+
+    public void setFirstPrizeCount(Long firstPrizeCount) {
+        this.firstPrizeCount = firstPrizeCount;
+    }
+
+    public Double getFirstPrizeAmount() {
+        return firstPrizeAmount;
+    }
+
+    public void setFirstPrizeAmount(Double firstPrizeAmount) {
+        this.firstPrizeAmount = firstPrizeAmount;
+    }
+
+    public Long getSecondPrizeCount() {
+        return secondPrizeCount;
+    }
+
+    public void setSecondPrizeCount(Long secondPrizeCount) {
+        this.secondPrizeCount = secondPrizeCount;
+    }
+
+    public Double getSecondPrizeAmount() {
+        return secondPrizeAmount;
+    }
+
+    public void setSecondPrizeAmount(Double secondPrizeAmount) {
+        this.secondPrizeAmount = secondPrizeAmount;
+    }
+
+    public Long getThirdPrizeCount() {
+        return thirdPrizeCount;
+    }
+
+    public void setThirdPrizeCount(Long thirdPrizeCount) {
+        this.thirdPrizeCount = thirdPrizeCount;
+    }
+
+    public Double getThirdPrizeAmount() {
+        return thirdPrizeAmount;
+    }
+
+    public void setThirdPrizeAmount(Double thirdPrizeAmount) {
+        this.thirdPrizeAmount = thirdPrizeAmount;
+    }
+
+    public Double getExpectedValue() {
+        return expectedValue;
+    }
+
+    public void setExpectedValue(Double expectedValue) {
+        this.expectedValue = expectedValue;
     }
 }
