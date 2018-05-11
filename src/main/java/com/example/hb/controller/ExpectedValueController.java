@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("/calc")
 public class ExpectedValueController {
 
     @Autowired
