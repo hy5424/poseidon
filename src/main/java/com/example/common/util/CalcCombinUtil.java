@@ -5,7 +5,7 @@ import org.hibernate.annotations.LazyToOne;
 /**
  * 计算组合数
  */
-public class CombinUtil {
+public class CalcCombinUtil {
 
     public static Long calcCombin() {
         Long redc = 33 * 32 * 31 * 30 * 29 * 28L / (getNFactorial(6));
