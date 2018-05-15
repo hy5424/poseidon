@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RedisTestController {
 
+    //使用RedisTemplate 或者 StringRedisTemplate
     @Autowired
     StringRedisTemplate redisTemplate;
 
