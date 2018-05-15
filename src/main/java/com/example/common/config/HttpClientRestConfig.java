@@ -10,12 +10,12 @@ import org.springframework.web.client.RestTemplate;
 public class HttpClientRestConfig {
 
     @Bean
-    public RestTemplate restTemplate(ClientHttpRequestFactory factory) {
+    public static RestTemplate restTemplate(ClientHttpRequestFactory factory) {
         return new RestTemplate(factory);
     }
 
     @Bean
-    public ClientHttpRequestFactory simpleClientHttpRequestFactory() {
+    public static ClientHttpRequestFactory simpleClientHttpRequestFactory() {
         SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
         factory.setReadTimeout(60000);//单位为ms
         factory.setConnectTimeout(60000);//单位为ms

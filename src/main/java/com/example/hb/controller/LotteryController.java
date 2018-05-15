@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.example.entity.LotteryHistory;
 import com.example.hb.repository.LotteryHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +24,7 @@ public class LotteryController {
         iterable.forEach(single -> {
             list.add(single);
         });
+
         return JSON.toJSONString(list);
     }
 }
