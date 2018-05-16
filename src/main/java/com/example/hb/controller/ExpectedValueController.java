@@ -1,52 +1,33 @@
 package com.example.hb.controller;
 
-import com.example.common.util.CalcExpactedValueUtil;
-import com.example.entity.LotteryHistory;
-import com.example.hb.repository.LotteryHistoryRepository;
+import com.example.hb.service.LotteryService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/calc")
 public class ExpectedValueController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ExpectedValueController.class);
+
     @Autowired
-    LotteryHistoryRepository lotteryHistoryRepository;
+    LotteryService lotteryService;
 
     /**
      * 计算所有期望值并保存
      */
     @RequestMapping("/allExp")
-    public void allExpectedValue() {
-        Iterable<LotteryHistory> iterable = lotteryHistoryRepository.findAll();
-        List<LotteryHistory> list = new ArrayList<>();
-        iterable.forEach(single -> {
-            list.add(single);
-        });
-        for (LotteryHistory lotteryHistory : list) {
-            Double expectedValue = CalcExpactedValueUtil.calcExpectedValue(lotteryHistory);
-            lotteryHistory.setExpectedValue(expectedValue);
+    public String allExpectedValue() {
+        try {
+            LOGGER.info("[计算所有期望值]开始......");
+            lotteryService.setExpectedValue();
+            return "计算成功！";
+        } catch (Exception e) {
+            LOGGER.error("[获得历史记录]异常：", e);
+            return "系统异常";
         }
-        lotteryHistoryRepository.saveAll(list);
     }
-
-    /**
-     * 计算单个期望值并保存
-     *
-     * @param lotteryHistory
-     */
-    @RequestMapping("/exp")
-    @Transactional
-    public void expectedValue(LotteryHistory lotteryHistory) {
-        Double expectedValue = CalcExpactedValueUtil.calcExpectedValue(lotteryHistory);
-        lotteryHistory.setExpectedValue(expectedValue);
-        lotteryHistoryRepository.save(lotteryHistory);
-    }
-
-
 }

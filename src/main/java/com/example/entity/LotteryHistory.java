@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class LotteryHistory {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Integer blue1;
     private Integer blue2;
