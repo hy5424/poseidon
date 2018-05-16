@@ -26,7 +26,7 @@ public class ExpectedValueController {
             lotteryService.setExpectedValue();
             return "计算成功！";
         } catch (Exception e) {
-            LOGGER.error("[获得历史记录]异常：", e);
+            LOGGER.error("[计算所有期望值]异常：", e);
             return "系统异常";
         }
     }
