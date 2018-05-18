@@ -1,6 +1,6 @@
 package com.example.hb.service;
 
-import com.example.common.util.CalcExpactedValueUtil;
+import com.example.common.util.CalcUtil;
 import com.example.entity.LotteryHistory;
 import com.example.hb.repository.LotteryHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,7 @@ public class LotteryService {
     public void setExpectedValue() throws Exception {
         List<LotteryHistory> list = this.getAll();
         for (LotteryHistory lotteryHistory : list) {
-            Double expectedValue = CalcExpactedValueUtil.calcExpectedValue(lotteryHistory);
+            Double expectedValue = CalcUtil.calcExpectedValue(lotteryHistory);
             lotteryHistory.setExpectedValue(expectedValue);
         }
         lotteryHistoryRepository.saveAll(list);
