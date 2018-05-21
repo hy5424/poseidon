@@ -36,7 +36,7 @@ public class insertCombin {
                 }
                 sql.append("(" + x[0] + "," + x[1] + "," + x[2] + "," + x[3] + "," + x[4] + "," + x[5] + "," + x[6] + ")");
                 if (num == 50000) {
-                    pstm = conn.prepareStatement(sql.toString().replace("VALUES ,","VALUES"));
+                    pstm = conn.prepareStatement(sql.toString().replace("VALUES ,", "VALUES"));
                     pstm.executeUpdate();
                     conn.commit();
                     sql.setLength(0);
@@ -44,7 +44,7 @@ public class insertCombin {
                     num = 0;
                 }
             }
-            pstm = conn.prepareStatement(sql.toString().replace("VALUES ,","VALUES"));
+            pstm = conn.prepareStatement(sql.toString().replace("VALUES ,", "VALUES"));
             pstm.executeUpdate();
             conn.commit();
             Long endTime = System.currentTimeMillis();
