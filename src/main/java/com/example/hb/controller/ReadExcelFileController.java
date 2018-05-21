@@ -15,9 +15,6 @@ public class ReadExcelFileController {
     @RequestMapping("/excel")
     public void readExcel(){
         readExcelFileService.readExcelFile("ss1");
-        readExcelFileService.readExcelFile("ss2");
-        readExcelFileService.readExcelFile("ss3");
-        readExcelFileService.readExcelFile("ss4");
     }
 
 }
