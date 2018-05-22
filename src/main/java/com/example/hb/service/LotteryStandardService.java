@@ -107,7 +107,6 @@ public class LotteryStandardService {
         }
 
         LotteryStandard lotteryStandard = new LotteryStandard();
-        lotteryStandard.setId(1L);
         //计算均值
         lotteryStandard.setHistoryBlue1Avg(CalcUtil.avg(b1Avg));
         lotteryStandard.setHistoryBlue2Avg(CalcUtil.avg(b2Avg));
@@ -133,7 +132,7 @@ public class LotteryStandardService {
         lotteryStandard.setHistoryBlue6StandardDiviation(CalcUtil.standardDiviation(b6StandardDiviation));
         lotteryStandard.setHistoryRedStandardDiviation(CalcUtil.standardDiviation(rStandardDiviation));
 
-        lotteryStandardRepository.save(lotteryStandard.getId());
+        lotteryStandardRepository.save(lotteryStandard);
 
     }
 

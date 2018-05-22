@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Qualifier("LotteryHistoryRepository")
+@Qualifier
 public interface LotteryHistoryRepository extends CrudRepository<LotteryHistory, Long> {
 }
