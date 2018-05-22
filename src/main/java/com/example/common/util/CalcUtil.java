@@ -25,7 +25,6 @@ public class CalcUtil {
      */
     public static List<int[]> calcAllCombination() {
         combinationSelect(red, 6);
-        System.out.println(list.size());
         return list;
     }
 

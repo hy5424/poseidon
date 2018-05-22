@@ -72,7 +72,6 @@ public class FileUtil {
     /**
      * 获得文件名的后缀,不包括点
      *
-     * @param f
      * @return
      */
     public static String getNameSuffix(String name) {

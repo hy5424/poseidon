@@ -3,7 +3,10 @@ package com.example.hb.test;
 import com.example.common.util.CalcUtil;
 import org.junit.Test;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class insertCombin {
@@ -16,7 +19,6 @@ public class insertCombin {
     public void Test() {
         Connection conn = null;
         PreparedStatement pstm = null;
-        ResultSet rt = null;
         List<int[]> list = CalcUtil.calcAllCombination();
         try {
             Class.forName("com.mysql.jdbc.Driver");
