@@ -57,7 +57,7 @@ public class CalcController {
     public String combinationData() {
         try {
             LOGGER.info("[计算组合各项数据]开始......");
-            lotteryStandardService.calcCombin();
+            lotteryStandardService.calcCombination();
             return "计算成功！";
         } catch (Exception e) {
             LOGGER.error("[计算组合各项数据]异常：", e);

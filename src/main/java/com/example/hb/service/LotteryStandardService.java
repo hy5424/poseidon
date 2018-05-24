@@ -139,7 +139,7 @@ public class LotteryStandardService {
     /**
      * 计算所有组合各项数值
      */
-    public void calcCombin() {
+    public void calcCombination() {
         Iterable<LotteryCombination> iterable = lotteryCombinationRepository.findAll();
         List<LotteryCombination> list = new ArrayList<>();
         iterable.forEach(single -> {

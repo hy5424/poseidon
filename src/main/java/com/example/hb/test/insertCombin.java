@@ -11,9 +11,9 @@ import java.util.List;
 
 public class insertCombin {
 
-    private String url = "jdbc:mysql://127.0.0.1:3306/lottery";
+    private String url = "jdbc:mysql://localhost:3306/lottery";
     private String user = "root";
-    private String password = "root";
+    private String password = "root123";
 
     @Test
     public void Test() {

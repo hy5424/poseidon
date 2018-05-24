@@ -13,8 +13,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello() {
-        String url = "http://localhost:8092/lottery/getAll";
-        String ret = restTemplate.postForObject(url, null, String.class);
-        return "restTemplate post测试" + ret;
+        return "restTemplate post测试";
     }
 }
