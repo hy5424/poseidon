@@ -13,6 +13,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String hello() {
-        return "restTemplate post测试";
+        return "docker 自动化部署测试";
     }
 }
